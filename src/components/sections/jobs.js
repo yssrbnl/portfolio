@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 import { srConfig } from '@config';
@@ -156,6 +155,16 @@ const StyledTabPanel = styled.div`
     }
   }
 
+  .location {
+    margin-bottom: 8px;
+    color: var(--light-slate);
+    font-family: var(--font-sans);
+    font-size: var(--fz-sm);
+    font-style: italic;
+    font-weight: 300;
+    opacity: 0.8;
+  }
+
   .range {
     margin-bottom: 25px;
     color: var(--light-slate);
@@ -165,29 +174,26 @@ const StyledTabPanel = styled.div`
 `;
 
 const Jobs = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
-        sort: { fields: [frontmatter___date], order: DESC }
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              company
-              location
-              range
-              url
-            }
-            html
-          }
-        }
-      }
-    }
-  `);
-
-  const jobsData = data.jobs.edges;
+  // Données statiques simplifiées
+  const jobsData = [
+    {
+      title: 'Stagiaire Développeur 3D & Web',
+      company: 'Vectory3 BV',
+      location: 'La Haye, Pays-Bas',
+      range: '10/03/2025 – 09/05/2025 (9 semaines)',
+      url: 'https://vectory3.com/',
+      html: `<p>Stage dans une entreprise innovante spécialisée dans la conception d'attelles médicales sur mesure et le développement d'outils numériques pour la santé.</p>
+             <ul>
+               <li>Modernisation et optimisation d'outils internes (web et 3D)</li>
+               <li>Développement de pipelines d'images pour la photogrammétrie</li>
+               <li>Refonte de sites web</li>
+               <li>Documentation technique et transmission des connaissances</li>
+               <li>Travail en équipe agile avec forte autonomie</li>
+               <li>Impact direct sur la robustesse et l'ergonomie des solutions</li>
+             </ul>
+             <p><em>(Détails confidentiels non divulgués.)</em></p>`,
+    },
+  ];
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -244,13 +250,13 @@ const Jobs = () => {
 
   return (
     <StyledJobsSection id="jobs" ref={revealContainer}>
-      <h2 className="numbered-heading">Where I’ve Worked</h2>
+      <h2 className="numbered-heading">Expérience professionnelle</h2>
 
       <div className="inner">
         <StyledTabList role="tablist" aria-label="Job tabs" onKeyDown={e => onKeyDown(e)}>
           {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { company } = node.frontmatter;
+            jobsData.map((job, i) => {
+              const { company } = job;
               return (
                 <StyledTabButton
                   key={i}
@@ -271,9 +277,8 @@ const Jobs = () => {
 
         <StyledTabPanels>
           {jobsData &&
-            jobsData.map(({ node }, i) => {
-              const { frontmatter, html } = node;
-              const { title, url, company, range } = frontmatter;
+            jobsData.map((job, i) => {
+              const { title, url, company, range, location, html } = job;
 
               return (
                 <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
@@ -293,6 +298,8 @@ const Jobs = () => {
                         </a>
                       </span>
                     </h3>
+
+                    <p className="location">{location}</p>
 
                     <p className="range">{range}</p>
 

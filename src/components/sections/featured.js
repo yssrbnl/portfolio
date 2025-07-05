@@ -322,7 +322,7 @@ const Featured = () => {
               tech
               github
               external
-              cta
+              pdf
             }
             html
           }
@@ -348,24 +348,30 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        Some Things I’ve Built
+        Projets phares
       </h2>
 
       <StyledProjectsGrid>
         {featuredProjects &&
           featuredProjects.map(({ node }, i) => {
             const { frontmatter, html } = node;
-            const { external, title, tech, github, cover, cta } = frontmatter;
+            const { external, title, tech, github, cover, pdf } = frontmatter;
             const image = getImage(cover);
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
                 <div className="project-content">
                   <div>
-                    <p className="project-overline">Featured Project</p>
+                    <p className="project-overline">Projet universitaire</p>
 
                     <h3 className="project-title">
-                      <a href={external}>{title}</a>
+                      <a
+                        style={{ zIndex: 1000 }}
+                        href={external ? external : github}
+                        target="_blank"
+                        rel="noreferrer">
+                        {title}
+                      </a>
                     </h3>
 
                     <div
@@ -382,18 +388,42 @@ const Featured = () => {
                     )}
 
                     <div className="project-links">
-                      {cta && (
-                        <a href={cta} aria-label="Course Link" className="cta">
-                          Learn More
-                        </a>
-                      )}
                       {github && (
-                        <a href={github} aria-label="GitHub Link">
+                        <a href={github} aria-label="GitHub Link" target="_blank" rel="noreferrer">
                           <Icon name="GitHub" />
                         </a>
                       )}
-                      {external && !cta && (
-                        <a href={external} aria-label="External Link" className="external">
+                      {pdf && (
+                        <a
+                          href={pdf}
+                          aria-label="Télécharger le rapport PDF"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14,2 14,8 20,8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10,9 9,9 8,9" />
+                          </svg>
+                        </a>
+                      )}
+                      {external && (
+                        <a
+                          href={external}
+                          aria-label="External Link"
+                          className="external"
+                          target="_blank"
+                          rel="noreferrer">
                           <Icon name="External" />
                         </a>
                       )}
@@ -402,7 +432,7 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
+                  <a href={external ? external : github} target="_blank" rel="noreferrer">
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>

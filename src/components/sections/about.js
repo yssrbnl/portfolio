@@ -18,6 +18,7 @@ const StyledAboutSection = styled.section`
     }
   }
 `;
+
 const StyledText = styled.div`
   ul.skills-list {
     display: grid;
@@ -46,6 +47,7 @@ const StyledText = styled.div`
     }
   }
 `;
+
 const StyledPic = styled.div`
   position: relative;
   max-width: 300px;
@@ -111,6 +113,94 @@ const StyledPic = styled.div`
       z-index: -1;
     }
   }
+
+  .languages {
+    margin-top: 50px;
+
+    h3 {
+      color: var(--green);
+      font-size: var(--fz-lg);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        margin-bottom: 8px;
+        padding-left: 20px;
+        font-family: var(--font-mono);
+        font-size: var(--fz-xs);
+        color: var(--light-slate);
+
+        &:before {
+          content: '▹';
+          position: absolute;
+          left: 0;
+          color: var(--green);
+          font-size: var(--fz-sm);
+          line-height: 12px;
+        }
+
+        strong {
+          color: var(--lightest-slate);
+        }
+      }
+    }
+  }
+
+  .certifications {
+    margin-top: 30px;
+
+    h3 {
+      color: var(--green);
+      font-size: var(--fz-lg);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        font-family: var(--font-mono);
+        font-size: var(--fz-xs);
+        color: var(--light-slate);
+
+        &:before {
+          content: '▹';
+          position: absolute;
+          left: 0;
+          color: var(--green);
+          font-size: var(--fz-sm);
+          line-height: 12px;
+        }
+
+        strong {
+          color: var(--lightest-slate);
+        }
+
+        a {
+          ${({ theme }) => theme.mixins.inlineLink};
+          color: var(--lightest-slate);
+          text-decoration: none;
+
+          &:hover {
+            color: var(--green);
+          }
+        }
+      }
+    }
+  }
 `;
 
 const About = () => {
@@ -125,43 +215,47 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['JavaScript (ES6+)', 'TypeScript', 'React', 'Eleventy', 'Node.js', 'WordPress'];
+  const skills = [
+    'React',
+    'Angular',
+    'TypeScript',
+    'Vue.js',
+    'JavaScript ES6+',
+    'Docker',
+    'Blender API',
+    'Python',
+    'Java',
+    'PHP',
+    'Oracle PLSQL',
+    'Linux/Unix',
+  ];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>
-      <h2 className="numbered-heading">About Me</h2>
+      <h2 className="numbered-heading">À propos</h2>
 
       <div className="inner">
         <StyledText>
           <div>
             <p>
-              Hello! My name is Brittany and I enjoy creating things that live on the internet. My
-              interest in web development started back in 2012 when I decided to try editing custom
-              Tumblr themes — turns out hacking together a custom reblog button taught me a lot
-              about HTML &amp; CSS!
+              Bonjour ! Passionné par le développement logiciel, la cybersecurité et les nouvelles
+              technologies, j'aime explorer les possibilités créatives qu'offre l'informatique
+              moderne et transformer des idées en solutions concrètes.
             </p>
 
             <p>
-              Fast-forward to today, and I’ve had the privilege of working at{' '}
-              <a href="https://us.mullenlowe.com/">an advertising agency</a>,{' '}
-              <a href="https://starry.com/">a start-up</a>,{' '}
-              <a href="https://www.apple.com/">a huge corporation</a>, and{' '}
-              <a href="https://scout.camd.northeastern.edu/">a student-led design studio</a>. My
-              main focus these days is building accessible, inclusive products and digital
-              experiences at <a href="https://upstatement.com/">Upstatement</a> for a variety of
-              clients.
+              Ma passion pour la programmation a commencé à 16 ans en développant des addons pour
+              GarrysMod. J'adorais voir mes idées prendre forme, ce qui m'a motivé à m'orienter vers
+              l'informatique et découvrir les multiples possibilités du monde numérique de demain.
             </p>
 
             <p>
-              I also recently{' '}
-              <a href="https://www.newline.co/courses/build-a-spotify-connected-app">
-                launched a course
-              </a>{' '}
-              that covers everything you need to build a web app with the Spotify API using Node
-              &amp; React.
+              Mon parcours du BUT R&T (Cybersécurité et IoT) au BUT Informatique (Développement
+              d'applications) m'a donné une vision complète des systèmes, de l'infrastructure réseau
+              au développement d'applications.
             </p>
 
-            <p>Here are a few technologies I’ve been working with recently:</p>
+            <p>Voici quelques technologies avec lesquelles j'ai travaillé récemment :</p>
           </div>
 
           <ul className="skills-list">
@@ -173,12 +267,43 @@ const About = () => {
           <div className="wrapper">
             <StaticImage
               className="img"
-              src="../../images/me.jpg"
+              src="../../images/me.png"
               width={500}
               quality={95}
               formats={['AUTO', 'WEBP', 'AVIF']}
-              alt="Headshot"
+              alt="Photo de profil"
             />
+          </div>
+
+          <div className="languages">
+            <h3>Langues</h3>
+            <ul>
+              <li>
+                <strong>Espagnol</strong> Natif
+              </li>
+              <li>
+                <strong>Français</strong> Courant
+              </li>
+              <li>
+                <strong>Anglais</strong> C1 avancé
+              </li>
+              <li>
+                <strong>Arabe</strong> Dialectal
+              </li>
+            </ul>
+          </div>
+
+          <div className="certifications">
+            <h3>Certifications</h3>
+            <ul>
+              <li>
+                <a href="/CCNA.pdf" target="_blank" rel="noreferrer">
+                  <strong>Cisco CCNA</strong>
+                </a>{' '}
+                - Cisco Certified Network Associate, certification validant les compétences
+                fondamentales en réseaux et sécurité
+              </li>
+            </ul>
           </div>
         </StyledPic>
       </div>

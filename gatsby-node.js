@@ -22,13 +22,13 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         edges {
           node {
             frontmatter {
-              slug
+              title
             }
           }
         }
       }
       tagsGroup: allMarkdownRemark(limit: 2000) {
-        group(field: frontmatter___tags) {
+        group(field: frontmatter___title) {
           fieldValue
         }
       }
@@ -46,9 +46,11 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   posts.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter.slug,
+      path: `/pensieve/${_.kebabCase(node.frontmatter.title)}/`,
       component: postTemplate,
-      context: {},
+      context: {
+        path: node.frontmatter.title,
+      },
     });
   });
 

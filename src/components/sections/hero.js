@@ -59,29 +59,27 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, []);
 
-  const one = <h1>Hi, my name is</h1>;
-  const two = <h2 className="big-heading">Brittany Chiang.</h2>;
-  const three = <h3 className="big-heading">I build things for the web.</h3>;
+  const one = <h1>Bonjour, je suis</h1>;
+  const two = <h2 className="big-heading">Yassir Boulouiha.</h2>;
+  const three = <h3 className="big-heading">Étudiant ingénieur informatique.</h3>;
   const four = (
     <>
       <p>
-        I’m a software engineer specializing in building (and occasionally designing) exceptional
-        digital experiences. Currently, I’m focused on building accessible, human-centered products
-        at{' '}
-        <a href="https://upstatement.com/" target="_blank" rel="noreferrer">
-          Upstatement
+        Je suis étudiant en 3e année d'école d'ingénieur à{' '}
+        <a href="https://www.3il-ingenieurs.fr/" target="_blank" rel="noreferrer">
+          3iL Rodez
         </a>
-        .
+        Actuellement à la recherche d'une alternance dans le domaine du développement informatique.
       </p>
     </>
   );
   const five = (
     <a
       className="email-link"
-      href="https://www.newline.co/courses/build-a-spotify-connected-app"
+      href="mailto:yassir.boulouiha.iut@gmail.com"
       target="_blank"
       rel="noreferrer">
-      Check out my course!
+      Me contacter
     </a>
   );
 

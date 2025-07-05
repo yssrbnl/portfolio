@@ -1,6 +1,5 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
+import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
@@ -163,7 +162,7 @@ const PensievePage = ({ location, data }) => {
           {posts.length > 0 &&
             posts.map(({ node }, i) => {
               const { frontmatter } = node;
-              const { title, description, slug, date, tags } = frontmatter;
+              const { title, date } = frontmatter;
               const formattedDate = new Date(date).toLocaleDateString();
 
               return (
@@ -173,23 +172,11 @@ const PensievePage = ({ location, data }) => {
                       <div className="post__icon">
                         <IconBookmark />
                       </div>
-                      <h5 className="post__title">
-                        <Link to={slug}>{title}</Link>
-                      </h5>
-                      <p className="post__desc">{description}</p>
+                      <h5 className="post__title">{title}</h5>
                     </header>
 
                     <footer>
                       <span className="post__date">{formattedDate}</span>
-                      <ul className="post__tags">
-                        {tags.map((tag, i) => (
-                          <li key={i}>
-                            <Link to={`/pensieve/tags/${kebabCase(tag)}/`} className="inline-link">
-                              #{tag}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
                     </footer>
                   </div>
                 </StyledPost>
@@ -211,18 +198,14 @@ export default PensievePage;
 export const pageQuery = graphql`
   {
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/content/posts/" }, frontmatter: { draft: { ne: true } } }
+      filter: { fileAbsolutePath: { regex: "/content/posts/" } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
           frontmatter {
             title
-            description
-            slug
             date
-            tags
-            draft
           }
           html
         }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
@@ -68,12 +67,10 @@ const TagTemplate = ({ pageContext, data, location }) => {
 
         <ul className="fancy-list">
           {edges.map(({ node }) => {
-            const { title, slug, date, tags } = node.frontmatter;
+            const { title, date } = node.frontmatter;
             return (
-              <li key={slug}>
-                <h2>
-                  <Link to={slug}>{title}</Link>
-                </h2>
+              <li key={title}>
+                <h2>{title}</h2>
                 <p className="subtitle">
                   <time>
                     {new Date(date).toLocaleDateString('en-US', {
@@ -82,14 +79,6 @@ const TagTemplate = ({ pageContext, data, location }) => {
                       day: 'numeric',
                     })}
                   </time>
-                  <span>&nbsp;&mdash;&nbsp;</span>
-                  {tags &&
-                    tags.length > 0 &&
-                    tags.map((tag, i) => (
-                      <Link key={i} to={`/pensieve/tags/${kebabCase(tag)}/`} className="tag">
-                        #{tag}
-                      </Link>
-                    ))}
                 </p>
               </li>
             );
@@ -124,21 +113,18 @@ TagTemplate.propTypes = {
 };
 
 export const pageQuery = graphql`
-  query($tag: String!) {
+  query ($tag: String!) {
     allMarkdownRemark(
       limit: 2000
       sort: { fields: [frontmatter___date], order: DESC }
-      filter: { frontmatter: { tags: { in: [$tag] } } }
+      filter: { frontmatter: { title: { eq: $tag } } }
     ) {
       totalCount
       edges {
         node {
           frontmatter {
             title
-            description
             date
-            slug
-            tags
           }
         }
       }

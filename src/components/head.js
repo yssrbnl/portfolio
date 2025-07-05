@@ -25,13 +25,8 @@ const Head = ({ title, description, image }) => {
     `,
   );
 
-  const {
-    defaultTitle,
-    defaultDescription,
-    siteUrl,
-    defaultImage,
-    twitterUsername,
-  } = site.siteMetadata;
+  const { defaultTitle, defaultDescription, siteUrl, defaultImage, twitterUsername } =
+    site.siteMetadata;
 
   const seo = {
     title: title || defaultTitle,
@@ -42,7 +37,7 @@ const Head = ({ title, description, image }) => {
 
   return (
     <Helmet title={title} defaultTitle={seo.title} titleTemplate={`%s | ${defaultTitle}`}>
-      <html lang="en" />
+      <html lang="fr" />
 
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />

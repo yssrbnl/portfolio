@@ -1,0 +1,267 @@
+/*Suppression du style appliqué de base pour tout les élements*/
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-family: 'Poppins';
+}
+
+/*Nav Bar*/
+.blur_effect {
+  position: relative;
+  z-index: 6;
+  top: 0;
+  height: 20px;
+  -webkit-backdrop-filter: blur(15px); /* assure la compatibilité avec safari */
+  backdrop-filter: blur(805px);
+  background-color: rgba(40, 47, 68, 0.2);
+}
+nav {
+  position: sticky;
+  display: flex;
+  width: 100%;
+  top: 3vh;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #282f44;
+}
+
+nav ul li a {
+  margin: 5px 10px;
+  font-weight: bold;
+  color: white;
+  font-size: 1.2em;
+}
+
+nav ul li a:hover {
+  background-color: #93a8ac;
+  border-radius: 10px;
+  padding: 5px;
+  transition: 0.3s;
+}
+
+/* Style du Contenu*/
+
+.title {
+  color: white;
+  margin: 20vh 15vw;
+  text-align: center;
+  font-size: 2.3em;
+}
+
+.content ul {
+  color: white;
+  background-color: rgba(147, 168, 172, 0.7);
+  margin: auto;
+  margin-right: 20vw;
+  margin-left: 20vw;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.content ul li {
+  padding: 5px;
+}
+
+.content img {
+  border-radius: 20px;
+  width: 350px;
+  height: 350px;
+}
+
+/*Footer*/
+
+footer {
+  position: sticky;
+  bottom: 10px;
+  display: flex;
+  width: 100%;
+  height: 70px auto;
+  justify-content: center;
+}
+
+footer ul {
+  background-color: rgba(40, 47, 68, 0.97);
+  display: flex;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  width: 70%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+footer ul li a {
+  margin: 20px;
+  color: white;
+  font-size: smaller;
+  text-align: center;
+}
+
+footer a img {
+  justify-content: right;
+}
+
+#html_img {
+  width: 90px;
+  height: 30px;
+}
+
+/*RESPONSIVE*/
+@media screen and (max-width: 1200px) {
+  .content ul li img {
+    width: 60%;
+    height: 36%;
+  }
+
+  .content ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content ul {
+    display: grid;
+    margin: 10px 5vw;
+  }
+
+  footer {
+    position: relative;
+    width: 100%;
+    padding-top: 20px;
+  }
+
+  .footer ul {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .content ul li img {
+    width: 100%;
+    height: 60%;
+  }
+
+  .footer {
+    position: relative;
+    display: grid;
+  }
+}
+
+/* Animation Background */
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+    border-radius: 50%;
+  }
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  background: #191d32;
+  overflow: hidden;
+}
+.background li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: animate 19s linear infinite;
+}
+
+.background li:nth-child(0) {
+  left: 78%;
+  width: 104px;
+  height: 104px;
+  bottom: -104px;
+  animation-delay: 1s;
+}
+.background li:nth-child(1) {
+  left: 49%;
+  width: 135px;
+  height: 135px;
+  bottom: -135px;
+  animation-delay: 1s;
+}
+.background li:nth-child(2) {
+  left: 88%;
+  width: 122px;
+  height: 122px;
+  bottom: -122px;
+  animation-delay: 10s;
+}
+.background li:nth-child(3) {
+  left: 45%;
+  width: 103px;
+  height: 103px;
+  bottom: -103px;
+  animation-delay: 10s;
+}
+.background li:nth-child(4) {
+  left: 73%;
+  width: 190px;
+  height: 190px;
+  bottom: -190px;
+  animation-delay: 1s;
+}
+.background li:nth-child(5) {
+  left: 60%;
+  width: 176px;
+  height: 176px;
+  bottom: -176px;
+  animation-delay: 7s;
+}
+.background li:nth-child(6) {
+  left: 14%;
+  width: 135px;
+  height: 135px;
+  bottom: -135px;
+  animation-delay: 11s;
+}
+.background li:nth-child(7) {
+  left: 2%;
+  width: 129px;
+  height: 129px;
+  bottom: -129px;
+  animation-delay: 34s;
+}
+.background li:nth-child(8) {
+  left: 66%;
+  width: 175px;
+  height: 175px;
+  bottom: -175px;
+  animation-delay: 20s;
+}
+.background li:nth-child(9) {
+  left: 89%;
+  width: 124px;
+  height: 124px;
+  bottom: -124px;
+  animation-delay: 37s;
+}
