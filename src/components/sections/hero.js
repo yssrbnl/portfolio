@@ -65,7 +65,7 @@ const Hero = () => {
   const four = (
     <>
       <p>
-        Je suis étudiant en 3e année d'école d'ingénieur à{' '}
+        Je suis admissible en 3e année d'école d'ingénieur à{' '}
         <a href="https://www.3il-ingenieurs.fr/" target="_blank" rel="noreferrer">
           3iL Rodez
         </a>
