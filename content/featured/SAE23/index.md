@@ -2,7 +2,7 @@
 date: '3'
 title: 'SAE 23 – Système de gestion IoT des bâtiments IUT'
 cover: './demo.PNG'
-github: 'https://github.com/gbersoulle/SAE23'
+github: 'https://github.com/Hugo0707/SAe23'
 external: ''
 pdf: ''
 tech:

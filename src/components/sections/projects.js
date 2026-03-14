@@ -330,7 +330,7 @@ const Projects = () => {
         frontmatter: {
           title: 'SAE 1.02 – Comparaison d\'Algorithmes',
           tech: ['Java', 'POO', 'CSV', 'Algorithmique', 'Complexité'],
-          github: 'https://github.com/Hugo0707/SAe23',
+          github: 'https://github.com/yssrbnl/SAE1.02',
           external: '',
           pdf: '/SAE1-02.pdf',
         },
@@ -360,7 +360,7 @@ const Projects = () => {
         frontmatter: {
           title: 'SAE 23 – Système de gestion IoT des bâtiments IUT',
           tech: ['PHP', 'MySQL', 'MQTT', 'HTML/CSS', 'JavaScript', 'Grafana', 'Node-RED'],
-          github: 'https://github.com/gbersoulle/SAE23',
+          github: 'https://github.com/Hugo0707/SAe23',
           external: '',
           pdf: '',
         },

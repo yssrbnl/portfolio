@@ -132,6 +132,15 @@ const ArchivePage = ({ location }) => {
   // Données statiques pour la page archive
   const projectsData = [
     {
+      date: '2026',
+      title: 'Moteur RAG (Retrieval-Augmented Generation)',
+      company: 'Projet Personnel',
+      tech: ['Python', 'RAG', 'Ollama', 'Qdrant', 'FastAPI', 'Docling', 'Docker'],
+      github: '',
+      external: '',
+      pdf: '/RAG_Engine_Documentation.pdf',
+    },
+    {
       date: '2024',
       title: 'Race for Water – Défi Ergonomie Nuit de l\'Info',
       company: 'Nuit de l\'Info Toulouse',
@@ -172,7 +181,7 @@ const ArchivePage = ({ location }) => {
       title: 'SAE 23 – Système de gestion IoT des bâtiments IUT',
       company: 'IUT de Blagnac',
       tech: ['PHP', 'MySQL', 'MQTT', 'HTML/CSS', 'JavaScript'],
-      github: 'https://github.com/gbersoulle/SAE23',
+      github: 'https://github.com/Hugo0707/SAe23',
       external: '',
       pdf: '',
     },
