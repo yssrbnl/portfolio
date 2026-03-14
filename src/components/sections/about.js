@@ -216,15 +216,15 @@ const About = () => {
   }, []);
 
   const skills = [
-    'React',
-    'Angular',
+    'Android Studio (Java/Kotlin)',
+    'React/Angular',
     'TypeScript',
-    'Vue.js',
+    'Qdrant/Vector Databases',
     'JavaScript ES6+',
-    'Docker',
-    'Blender API',
+    'Docker/Kubernetes',
+    'ArgoCD (GitOps)',
     'Python',
-    'Java',
+    'Java/JavaFX',
     'PHP',
     'Oracle PLSQL',
     'Linux/Unix',
@@ -282,13 +282,13 @@ const About = () => {
                 <strong>Espagnol</strong> Natif
               </li>
               <li>
-                <strong>Français</strong> Courant
+                <strong>Français</strong> Bilingue
               </li>
               <li>
-                <strong>Anglais</strong> C1 avancé
+                <strong>Anglais</strong> B2
               </li>
               <li>
-                <strong>Arabe</strong> Dialectal
+                <strong>Arabe Dialectal</strong> Bilingue
               </li>
             </ul>
           </div>

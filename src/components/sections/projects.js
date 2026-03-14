@@ -283,6 +283,21 @@ const Projects = () => {
     {
       node: {
         frontmatter: {
+          title: 'Moteur RAG (Retrieval-Augmented Generation)',
+          tech: ['Python', 'RAG', 'Ollama', 'Qdrant', 'FastAPI', 'Docling', 'Docker'],
+          github: '',
+          external: '',
+          pdf: '/RAG_Engine_Documentation.pdf',
+        },
+        shortDescription:
+          'Moteur RAG production-ready, conçu pour indexer et interroger une base de connaissances documentaire via recherche vectorielle sémantique...',
+        fullDescription:
+          'Projet personnel expérimental hébergé en local sur une architecture Docker-compose. Il intègre Docling pour la conversion des documents (PDF, DOCX, HTML), le modèle d\'embedding multilingue BGE-M3 avec Ollama, et Qdrant pour la base vectorielle. Une API FastAPI et un pipeline CI/CD GitLab on-premise soutiennent le déploiement. Le projet est actuellement privé (sans lien GitHub direct) en attendant une version stable qui apportera des bénéfices concrets sur des applications métier ou personnelles (comme n8n).',
+      },
+    },
+    {
+      node: {
+        frontmatter: {
           title: 'Race for Water – Défi Ergonomie Nuit de l\'Info',
           tech: ['HTML', 'CSS', 'JavaScript', 'UX/UI', 'Pierre-Feuille-Ciseaux'],
           github: 'https://github.com/DanerSharifi-FR/race-for-water/blob/master/contact.js',

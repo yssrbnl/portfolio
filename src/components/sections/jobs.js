@@ -177,6 +177,18 @@ const Jobs = () => {
   // Données statiques simplifiées
   const jobsData = [
     {
+      title: 'Stagiaire IA & Automatisation en Production',
+      company: 'CA-GIP',
+      location: 'Rodez, France',
+      range: 'Mars 2026 – Juillet 2026',
+      url: 'https://www.ca-gip.fr/',
+      html: `<p>Stage au sein du Crédit Agricole Group Infrastructure Platform (CA-GIP), dans un environnement de production critique (52 000 serveurs, architecture Cloud Native) — squads Agile CATS.</p>
+             <ul>
+               <li>Collaboration inter-équipes pour intégrer des composants IA en production Cloud Native</li>
+               <li>Exploration de l'IA générative souveraine pour l'assistance à la production</li>
+             </ul>`,
+    },
+    {
       title: 'Stagiaire Développeur 3D & Web',
       company: 'Vectory3 BV',
       location: 'La Haye, Pays-Bas',
