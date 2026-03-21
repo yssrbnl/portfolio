@@ -181,7 +181,7 @@ const ArchivePage = ({ location }) => {
       title: 'SAE 1.02 – Comparaison d\'Algorithmes',
       company: 'IUT de Blagnac',
       tech: ['Java', 'POO', 'CSV', 'Algorithmique'],
-      github: 'https://github.com/Hugo0707/SAe23',
+      github: 'https://github.com/yssrbnl/SAE1.02',
       external: '',
       pdf: '/SAE1-02.pdf',
     },
@@ -202,15 +202,6 @@ const ArchivePage = ({ location }) => {
       github: '',
       external: '',
       pdf: '/SAE1-04.pdf',
-    },
-    {
-      date: '2022',
-      title: 'SAE 14 – Portfolio Web',
-      company: 'IUT de Blagnac',
-      tech: ['HTML5', 'CSS3', 'Design responsive'],
-      github: '',
-      external: '/SAE14/index.html',
-      pdf: '/Gant_SAE14.pdf',
     },
     {
       date: '2022',
@@ -245,7 +236,10 @@ const ArchivePage = ({ location }) => {
       <main>
         <header ref={revealTitle}>
           <h1 className="big-heading">Archives</h1>
-          <p className="subtitle">Une liste complète de mes projets universitaires</p>
+          <p className="subtitle">
+            Une liste complète de mes projets universitaires et personnels qui ont été les plus
+            enrichissants.
+          </p>
         </header>
 
         <StyledTableContainer ref={revealTable}>

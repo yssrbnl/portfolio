@@ -244,7 +244,7 @@ const About = () => {
             </p>
 
             <p>
-              Ma passion pour la programmation a commencé à 16 ans en développant des addons pour
+              Ma passion pour la programmation a commencé à 16 ans en développant des addons sur
               GarrysMod. J'adorais voir mes idées prendre forme, ce qui m'a motivé à m'orienter vers
               l'informatique et découvrir les multiples possibilités du monde numérique de demain.
             </p>

@@ -388,21 +388,6 @@ const Projects = () => {
     {
       node: {
         frontmatter: {
-          title: 'SAE 14 – Portfolio Web',
-          tech: ['HTML5', 'CSS3', 'Design responsive'],
-          github: '',
-          external: '/SAE14/index.html',
-          pdf: '/Gant_SAE14.pdf',
-        },
-        shortDescription:
-          'Création d\'un portfolio web entièrement fait à la main en première année avec HTML5 et CSS3 uniquement...',
-        fullDescription:
-          'Création d\'un portfolio web entièrement fait à la main en première année de BUT Réseaux & Télécommunications (Semestre 1). Développé uniquement avec HTML5 et CSS3 selon les contraintes pédagogiques (pas de JavaScript autorisé). Le site comprend une page about me qui est en anglais, un design responsive et présente mes projets et compétences de l\'époque. Je suis désolé parce que je n\'ai retrouvé qu\'une version de mon site mais sans le contenu. Ce projet démontre ma capacité à créer des interfaces web propres et fonctionnelles avec les technologies de base.',
-      },
-    },
-    {
-      node: {
-        frontmatter: {
           title: 'SAE 1.04 – Création d\'une base de données',
           tech: ['Base de données', 'Modélisation', 'SQL', 'Conception'],
           github: '',
@@ -574,7 +559,7 @@ const Projects = () => {
   return (
     <>
       <StyledProjectsSection>
-        <h2 ref={revealTitle}>Projets universitaires</h2>
+        <h2 ref={revealTitle}>Projets universitaires et personnels</h2>
 
         <Link className="inline-link archive-link" to="/archive" ref={revealArchiveLink}>
           voir tous les projets

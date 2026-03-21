@@ -1,5 +1,5 @@
 ---
-date: '1'
+date: '3'
 title: 'SAE 15 – Gestion énergétique via capteurs IoT'
 cover: './demo.PNG'
 github: ''
