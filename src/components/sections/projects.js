@@ -388,11 +388,11 @@ const Projects = () => {
     {
       node: {
         frontmatter: {
-          title: 'SAE 1.04 – Création d\'une base de données',
+          title: 'SAE 2.04 – Création d\'une base de données',
           tech: ['Base de données', 'Modélisation', 'SQL', 'Conception'],
           github: '',
           external: '',
-          pdf: '/SAE1-04.pdf',
+          pdf: '/BOULOUIHA_DELAPLAGNE_S2-04.pdf',
         },
         shortDescription:
           'Conception et création d\'une base de données complète avec modélisation et documentation technique...',

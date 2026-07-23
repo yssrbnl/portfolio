@@ -196,12 +196,12 @@ const ArchivePage = ({ location }) => {
     },
     {
       date: '2023',
-      title: 'SAE 1.04 – Création d\'une base de données',
+      title: 'SAE 2.04 – Création d\'une base de données',
       company: 'IUT de Blagnac',
       tech: ['Base de données', 'Modélisation', 'SQL'],
       github: '',
       external: '',
-      pdf: '/SAE1-04.pdf',
+      pdf: '/BOULOUIHA_DELAPLAGNE_S2-04.pdf',
     },
     {
       date: '2022',
